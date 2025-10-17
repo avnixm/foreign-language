@@ -1,0 +1,43 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  
+  <!-- Gradient accent -->
+  <rect width="1200" height="630" fill="url(#paint0_linear)"/>
+  
+  <!-- Main circle background -->
+  <circle cx="300" cy="315" r="150" fill="#FEE2E2"/>
+  
+  <!-- Book icon -->
+  <rect x="240" y="265" width="120" height="100" rx="8" fill="#E07A7A"/>
+  <rect x="245" y="270" width="110" height="90" rx="5" fill="white"/>
+  <line x1="300" y1="270" x2="300" y2="360" stroke="#E07A7A" stroke-width="3"/>
+  
+  <!-- Japanese character decorative element -->
+  <g transform="translate(300, 315)" opacity="0.3">
+    <text x="-30" y="15" font-size="60" fill="#E07A7A" font-family="Arial, sans-serif">あ</text>
+  </g>
+  
+  <!-- Title -->
+  <text x="450" y="280" font-size="72" font-weight="bold" fill="#E07A7A" font-family="system-ui, -apple-system, sans-serif">4B-EBook</text>
+  
+  <!-- Subtitle -->
+  <text x="450" y="340" font-size="42" fill="#64748B" font-family="system-ui, -apple-system, sans-serif">Learn Japanese</text>
+  
+  <!-- Description -->
+  <text x="450" y="400" font-size="28" fill="#94A3B8" font-family="system-ui, -apple-system, sans-serif">Interactive lessons, quizzes, and</text>
+  <text x="450" y="435" font-size="28" fill="#94A3B8" font-family="system-ui, -apple-system, sans-serif">comprehensive grammar practice</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="1000" cy="150" r="60" fill="#FEE2E2" opacity="0.5"/>
+  <circle cx="1100" cy="500" r="40" fill="#FECACA" opacity="0.5"/>
+  <circle cx="100" cy="100" r="40" fill="#FCA5A5" opacity="0.3"/>
+  
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FEE2E2" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+</svg>
+
