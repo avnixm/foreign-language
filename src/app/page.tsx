@@ -1,103 +1,90 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  useEffect(() => {
+    document.title = "4B-EBook — Learn Japanese";
+  }, []);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="relative bg-white" style={{ height: 'calc(100vh - 4rem)' }}>
+      {/* Main Hero Section - Exact Cieloes Layout */}
+      <section className="h-full flex items-center justify-center px-6 -mt-16 pt-16">
+        <div className="mx-auto max-w-5xl w-full">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+            {/* Left: Mascot/Illustration */}
+            <div className="flex items-center justify-center order-2 md:order-1">
+              <div className="relative">
+                {/* Japanese learning mascot - cute character */}
+                <svg className="w-72 h-72 md:w-80 md:h-80" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Shadow/ground */}
+                  <ellipse cx="250" cy="420" rx="140" ry="20" fill="#FCA5A5" opacity="0.2"/>
+                  
+                  {/* Character body */}
+                  <ellipse cx="250" cy="320" rx="100" ry="110" fill="#FECACA"/>
+                  
+                  {/* Head */}
+                  <circle cx="250" cy="200" r="110" fill="#FEE2E2"/>
+                  
+                  {/* Ears */}
+                  <ellipse cx="165" cy="150" rx="30" ry="40" fill="#FCA5A5"/>
+                  <ellipse cx="335" cy="150" rx="30" ry="40" fill="#FCA5A5"/>
+                  
+                  {/* Inner ears */}
+                  <ellipse cx="165" cy="155" rx="15" ry="20" fill="#FEE2E2"/>
+                  <ellipse cx="335" cy="155" rx="15" ry="20" fill="#FEE2E2"/>
+                  
+                  {/* Eyes - happy closed */}
+                  <path d="M 210 190 Q 220 200 230 190" stroke="#1F2937" strokeWidth="6" fill="none" strokeLinecap="round"/>
+                  <path d="M 270 190 Q 280 200 290 190" stroke="#1F2937" strokeWidth="6" fill="none" strokeLinecap="round"/>
+                  
+                  {/* Blush */}
+                  <circle cx="180" cy="210" r="15" fill="#FCA5A5" opacity="0.5"/>
+                  <circle cx="320" cy="210" r="15" fill="#FCA5A5" opacity="0.5"/>
+                  
+                  {/* Happy smile */}
+                  <path d="M 210 230 Q 250 260 290 230" stroke="#1F2937" strokeWidth="6" fill="none" strokeLinecap="round"/>
+                  
+                  {/* Book being held */}
+                  <rect x="180" y="380" width="70" height="55" rx="5" fill="#10B981"/>
+                  <rect x="186" y="386" width="58" height="43" rx="3" fill="#D1FAE5"/>
+                  <line x1="215" y1="386" x2="215" y2="429" stroke="#10B981" strokeWidth="2"/>
+                  
+                  {/* Japanese character on book */}
+                  <text x="215" y="418" fontSize="28" fill="#059669" fontWeight="bold" textAnchor="middle" fontFamily="Arial">あ</text>
+                  
+                  {/* Sparkles around character */}
+                  <g fill="#F59E0B">
+                    <path d="M 380 130 L 385 135 L 390 130 L 385 125 Z"/>
+                    <path d="M 400 180 L 403 183 L 406 180 L 403 177 Z"/>
+                    <path d="M 120 160 L 123 163 L 126 160 L 123 157 Z"/>
+                    <path d="M 100 210 L 105 215 L 110 210 L 105 205 Z"/>
+                    <circle cx="370" cy="240" r="4"/>
+                    <circle cx="130" cy="280" r="4"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            {/* Right: Text Content */}
+            <div className="text-center md:text-left order-1 md:order-2">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#E07A7A] mb-6 leading-tight">
+                The fun way of learning Japanese is here!
+              </h1>
+              
+              <Link 
+                href="/lessons" 
+                className="inline-block bg-[#E07A7A] hover:bg-[#D06666] text-white px-10 py-3.5 rounded-2xl font-bold text-base uppercase tracking-wide shadow-lg hover:shadow-xl transition-all"
+              >
+                CONTINUE LEARNING
+              </Link>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
     </div>
   );
 }
