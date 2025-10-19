@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
+import Image from 'next/image';
 
 export default function AboutPage() {
   useEffect(() => {
@@ -18,6 +19,30 @@ export default function AboutPage() {
         <p className="text-base text-slate-600 max-w-xl mx-auto">
           Making Japanese learning accessible and enjoyable for everyone
         </p>
+      </div>
+
+      {/* Class Photo Section */}
+      <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm mb-6">
+        <div className="text-center mb-4">
+          <h2 className="text-xl font-bold text-slate-900 mb-2">Meet the 4B Class</h2>
+          <p className="text-sm text-slate-600">
+            The amazing students behind 4B-EBook - passionate about Japanese learning and education
+          </p>
+        </div>
+        <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden">
+          <Image
+            src="/4bclasspic.jpeg"
+            alt="4B Class - Japanese Learning Community"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="mt-4 text-center">
+          <p className="text-xs text-slate-500">
+            Our dedicated team of students working together to make Japanese learning accessible and fun
+          </p>
+        </div>
       </div>
 
       {/* Cards Grid - Smaller and tighter */}
@@ -40,7 +65,7 @@ export default function AboutPage() {
           </div>
           <h2 className="text-lg font-bold mb-2 text-slate-900">Our Story</h2>
           <p className="text-sm text-slate-600 leading-relaxed">
-            Developed by a team of dedicated students as part of our Foreign Language subject project at OLSHCO.
+            Developed by the amazing students of 4B Class as part of our Foreign Language subject project at OLSHCO. We&apos;re passionate about making Japanese learning accessible and fun for everyone.
           </p>
         </div>
       </div>

@@ -34,10 +34,10 @@ export const metadata: Metadata = {
     siteName: '4B-EBook',
     images: [
       {
-        url: '/og-image.svg',
+        url: '/4bclasspic.jpeg',
         width: 1200,
         height: 630,
-        alt: '4B-EBook - Learn Japanese with interactive lessons',
+        alt: '4B Class - Japanese Learning Community',
       },
     ],
   },
