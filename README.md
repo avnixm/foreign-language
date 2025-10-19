@@ -8,7 +8,7 @@
 
 *Developed by the amazing students of 4B Class as part of their Foreign Language subject project at OLSHCO.*
 
-[![License](https://img.shields.io/badge/License-Educational-blue.svg)](https://github.com/4b-class/4b-ebook)
+[![License](https://img.shields.io/badge/License-Educational-blue.svg)](https://github.com/avnixm/foreign-language)
 [![Next.js](https://img.shields.io/badge/Next.js-15.5.5-black.svg)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.1.0-blue.svg)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
@@ -75,7 +75,7 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/avnixm/4b-ebook.git
+   git clone https://github.com/avnixm/foreign-language
    cd 4b-ebook
    ```
 
