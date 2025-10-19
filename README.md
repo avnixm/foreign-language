@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="public/icon.png" alt="4B-EBook Logo" width="80" height="80">
+<img src="public/icon.png" alt="4B-EBook Logo" width="128" height="128">
 
 **A comprehensive, interactive Japanese learning application built with Next.js 15, featuring lessons, alphabet learning, quizzes, and cultural insights.**
 
