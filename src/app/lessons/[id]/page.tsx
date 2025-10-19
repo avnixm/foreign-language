@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams } from 'next/navigation';
-import { getLessonById, getAllLessons } from '@/data/lessons';
+import { getLessonById } from '@/data/lessons';
 import Link from 'next/link';
 import FloatingQuizCTA from '@/components/FloatingQuizCTA';
 import { useState, useEffect, useMemo } from 'react';
@@ -30,6 +30,58 @@ export default function LessonDetail() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentStep]);
+
+  // Generate mini-quiz questions from vocabulary (memoized to prevent regeneration)
+  const vocabularyQuiz = useMemo(() => {
+    if (!lesson || lesson.vocabulary.length < 4) return [];
+    
+    // Randomly select 3 vocabulary items
+    const shuffled = [...lesson.vocabulary].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 3).map((item, idx) => {
+      // Create wrong answers from other vocabulary
+      const wrongAnswers = lesson.vocabulary
+        .filter(v => v.word !== item.word)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3)
+        .map(v => v.meaning);
+      
+      const allOptions = [item.meaning, ...wrongAnswers].sort(() => Math.random() - 0.5);
+      
+      return {
+        id: idx,
+        question: `What does "${item.word}" mean?`,
+        word: item.word,
+        options: allOptions,
+        correctAnswer: item.meaning,
+      };
+    });
+  }, [lesson]);
+
+  // Generate mini-quiz questions from grammar (memoized to prevent regeneration)
+  const grammarQuiz = useMemo(() => {
+    if (!lesson || lesson.grammar.length < 2) return [];
+    
+    // Randomly select 2 grammar points
+    const shuffled = [...lesson.grammar].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 2).map((item, idx) => {
+      // Create wrong answers from other grammar points
+      const wrongAnswers = lesson.grammar
+        .filter(g => g.title !== item.title)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3)
+        .map(g => g.explanation);
+      
+      const allOptions = [item.explanation, ...wrongAnswers].sort(() => Math.random() - 0.5);
+      
+      return {
+        id: idx,
+        question: `What does "${item.title}" mean?`,
+        title: item.title,
+        options: allOptions,
+        correctAnswer: item.explanation,
+      };
+    });
+  }, [lesson]);
 
   if (!lesson) {
     return (
@@ -76,61 +128,6 @@ export default function LessonDetail() {
       setCurrentStep(steps[currentStepIndex - 1].id);
     }
   };
-
-  // Generate mini-quiz questions from vocabulary (memoized to prevent regeneration)
-  const vocabularyQuiz = useMemo(() => {
-    if (!lesson || lesson.vocabulary.length < 4) return [];
-    
-    // Randomly select 3 vocabulary items
-    const shuffled = [...lesson.vocabulary].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, 3).map((item, idx) => {
-      // Create wrong answers from other vocabulary
-      const wrongAnswers = lesson.vocabulary
-        .filter(v => v.word !== item.word)
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 3)
-        .map(v => v.meaning);
-      
-      const allOptions = [item.meaning, ...wrongAnswers].sort(() => Math.random() - 0.5);
-      
-      return {
-        id: idx,
-        question: `What does "${item.word}" mean?`,
-        word: item.word,
-        options: allOptions,
-        correctAnswer: item.meaning,
-      };
-    });
-  }, [lesson]);
-
-  // Generate mini-quiz from grammar examples (memoized to prevent regeneration)
-  const grammarQuiz = useMemo(() => {
-    if (!lesson || lesson.grammar.length === 0) return [];
-    
-    const quizQuestions = lesson.grammar.slice(0, 2).map((point, idx) => {
-      if (point.examples.length > 0) {
-        const example = point.examples[0];
-        // Create a fill-in-the-blank from the romaji
-        const words = example.romaji.split(' ');
-        if (words.length > 2) {
-          const blankIndex = Math.floor(words.length / 2);
-          const correctWord = words[blankIndex];
-          const questionText = words.map((w, i) => i === blankIndex ? '____' : w).join(' ');
-          
-          return {
-            id: idx,
-            question: `Fill in the blank: "${questionText}"`,
-            hint: example.english,
-            correctAnswer: correctWord.toLowerCase().replace(/[.,!?]/g, ''),
-            type: 'fill-blank' as const,
-          };
-        }
-      }
-      return null;
-    }).filter(Boolean);
-    
-    return quizQuestions.length > 0 ? quizQuestions : [];
-  }, [lesson]);
 
   const checkVocabularyQuiz = () => {
     setShowVocabQuizResults(true);
@@ -538,7 +535,6 @@ export default function LessonDetail() {
                       return (
                         <div key={q.id} className="bg-white rounded-xl p-4">
                           <p className="font-semibold text-slate-900 mb-2">{q.question}</p>
-                          <p className="text-xs text-slate-500 mb-3">Hint: {q.hint}</p>
                           
                           <input
                             type="text"

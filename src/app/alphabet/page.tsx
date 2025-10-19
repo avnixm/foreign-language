@@ -2,14 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getAlphabetData, AlphabetCharacter } from '@/data/alphabet';
+import { getAlphabetData } from '@/data/alphabet';
 
 export default function AlphabetPage() {
   const [selectedAlphabet, setSelectedAlphabet] = useState<'hiragana' | 'katakana'>('hiragana');
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [playingAudio, setPlayingAudio] = useState<string | null>(null);
-  const [studyMode, setStudyMode] = useState<'learn' | 'quiz'>('learn');
 
   useEffect(() => {
     document.title = "Japanese Alphabets — 4B-EBook";
