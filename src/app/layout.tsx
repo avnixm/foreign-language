@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   publisher: "4B-EBook",
   metadataBase: new URL('https://4b-ebook.com'),
   icons: {
-    icon: '/icon.svg',
-    apple: '/icon.svg',
+    icon: '/icon.png',
+    apple: '/icon.png',
   },
   openGraph: {
     type: 'website',
