@@ -58,7 +58,7 @@ export default function DashboardChrome({ children }: Props) {
         {/* Logo */}
         <div className="p-6 border-b border-slate-100">
           <Link href="/" className="flex items-center gap-2">
-            <img src="/icon.png" alt="4B-EBook" className="h-10 w-10 rounded-2xl" />
+            <img src="/icon.png" alt="4B-EBook" className="h-12 w-12 rounded-2xl" />
             <span className="text-xl font-bold text-[#E07A7A]">4B-EBOOK</span>
           </Link>
         </div>
@@ -101,7 +101,7 @@ export default function DashboardChrome({ children }: Props) {
             ☰
           </button>
           <Link href="/" className="flex items-center gap-2">
-            <img src="/icon.png" alt="4B-EBook" className="h-8 w-8 rounded-lg" />
+            <img src="/icon.png" alt="4B-EBook" className="h-10 w-10 rounded-lg" />
             <span className="text-lg font-bold text-[#E07A7A]">4B-EBOOK</span>
           </Link>
         </div>

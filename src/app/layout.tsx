@@ -20,15 +20,21 @@ export const metadata: Metadata = {
   authors: [{ name: "4B-EBook" }],
   creator: "4B-EBook",
   publisher: "4B-EBook",
-  metadataBase: new URL('https://4b-ebook.com'),
+  metadataBase: new URL('https://fl.cieloes.com'),
   icons: {
-    icon: '/icon.png',
-    apple: '/icon.png',
+    icon: [
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/icon.png',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://4b-ebook.com',
+    url: 'https://fl.cieloes.com',
     title: '4B-EBook — Learn Japanese',
     description: 'Interactive Japanese lessons and quizzes. Master Hiragana, Katakana, and Kanji with comprehensive vocabulary, grammar, and conversation practice.',
     siteName: '4B-EBook',
@@ -68,6 +74,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/icon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/icon.png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
