@@ -18,7 +18,6 @@
 
 ---
 
-<div align="center">
 
 ### 🖥️ Application Preview
 
@@ -296,7 +295,6 @@ This project is developed by 4B Class students for educational purposes. All con
 
 ---
 
-<div align="center">
 
 ## 👥 Credits
 
@@ -315,4 +313,3 @@ Japanese language teachers • Design mentors • Technical advisors
 [![GitHub](https://img.shields.io/badge/GitHub-4B--EBook-black.svg)](https://github.com/4b-class/4b-ebook)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Available-green.svg)](https://fl.cieloes.com)
 
-</div>
