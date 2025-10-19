@@ -122,8 +122,8 @@ export default function AlphabetPage() {
         </div>
 
         {/* Flashcard */}
-        <div className="bg-white rounded-2xl md:rounded-3xl shadow-lg border border-slate-200 overflow-hidden mb-6 md:mb-8">
-          <div className="aspect-[3/2] md:aspect-[4/3] relative">
+        <div className="bg-white rounded-2xl md:rounded-3xl shadow-lg border border-slate-200 overflow-hidden mb-6 md:mb-8 max-w-lg mx-auto">
+          <div className="aspect-square relative">
             {/* Card Content */}
             <div 
               className={`absolute inset-0 transition-transform duration-500 transform-gpu ${
@@ -133,8 +133,8 @@ export default function AlphabetPage() {
             >
               {/* Front of Card */}
               <div className="absolute inset-0 backface-hidden">
-                <div className="h-full flex flex-col items-center justify-center p-4 md:p-8">
-                  <div className="text-6xl md:text-8xl lg:text-9xl font-bold text-slate-800 mb-2 md:mb-4">
+                <div className="h-full flex flex-col items-center justify-center p-3 md:p-6">
+                  <div className="text-6xl md:text-7xl lg:text-8xl font-bold text-slate-800 mb-2 md:mb-4">
                     {currentCharacter.character}
                   </div>
                   <div className="text-sm md:text-xl text-slate-600 mb-3 md:mb-6">
@@ -156,7 +156,7 @@ export default function AlphabetPage() {
 
               {/* Back of Card */}
               <div className="absolute inset-0 backface-hidden rotate-y-180">
-                <div className="h-full flex flex-col items-center justify-center p-4 md:p-8">
+                <div className="h-full flex flex-col items-center justify-center p-3 md:p-6">
                   <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#E07A7A] mb-2 md:mb-4">
                     {currentCharacter.romaji}
                   </div>
