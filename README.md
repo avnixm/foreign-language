@@ -21,7 +21,13 @@
 
 ### 🖥️ Application Preview
 
-![4B-EBook Application](public/4bclasspic.jpeg)
+<img width="1919" height="944" alt="image" src="https://github.com/user-attachments/assets/e270f7c6-6583-417f-a2d7-75f117eefb55" />
+<img width="1919" height="945" alt="image" src="https://github.com/user-attachments/assets/c87fe59b-e83c-40cb-86da-26306552f8bf" />
+<img width="1919" height="945" alt="image" src="https://github.com/user-attachments/assets/53a1b2ad-f185-4ce4-be93-5646634888a5" />
+<img width="1919" height="941" alt="image" src="https://github.com/user-attachments/assets/0c1efe11-c31b-460d-b7b0-3097312678d1" />
+<img width="1919" height="944" alt="image" src="https://github.com/user-attachments/assets/0be26ea3-9393-4bf8-b2f2-5921796edb38" />
+
+
 
 *Interactive Japanese learning interface with lessons, alphabet flashcards, and quizzes*
 
