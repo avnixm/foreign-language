@@ -14,6 +14,7 @@ export default function FloatingNav() {
 
           <div className="flex items-center gap-2">
             <Link href="/lessons" className="hidden sm:inline-flex px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Lessons</Link>
+            <Link href="/alphabet" className="hidden sm:inline-flex px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Alphabet</Link>
             <Link href="/quizzes" className="hidden sm:inline-flex px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Quizzes</Link>
             <Link href="/about" className="hidden sm:inline-flex px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">About</Link>
           </div>

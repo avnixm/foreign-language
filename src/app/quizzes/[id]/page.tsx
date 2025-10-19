@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams } from 'next/navigation';
-import { getLessonById } from '@/data/lessons';
+import { getLessonById, getAllLessons } from '@/data/lessons';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
@@ -77,7 +77,11 @@ export default function QuizPage() {
 
   if (showResults) {
     const percentage = Math.round((score / lesson.quiz.length) * 100);
-    const passed = percentage >= 70;
+    const passed = percentage >= 75; // Changed to 75%
+    const allLessons = getAllLessons();
+    const nextLessonId = lessonId + 1;
+    const hasNextLesson = nextLessonId <= allLessons.length;
+    const isLastLesson = lessonId === allLessons.length;
 
     return (
       <div className="min-h-screen bg-white flex items-center justify-center p-6">
@@ -91,6 +95,17 @@ export default function QuizPage() {
             <span className="font-bold">{lesson.quiz.length}</span> correct
           </p>
           <div className="text-3xl font-bold text-[#E07A7A] mb-8">{percentage}%</div>
+
+          {/* Completion Message */}
+          {passed && isLastLesson && (
+            <div className="bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200 rounded-2xl p-6 mb-8">
+              <div className="text-5xl mb-3">🏆</div>
+              <h2 className="text-xl font-bold text-slate-900 mb-2">Congratulations!</h2>
+              <p className="text-slate-700">
+                You&apos;ve completed all available lessons! Keep practicing to master Japanese.
+              </p>
+            </div>
+          )}
 
           {/* Detailed Results */}
           <div className="bg-slate-50 rounded-2xl p-6 mb-8 text-left">
@@ -116,18 +131,59 @@ export default function QuizPage() {
             </div>
           </div>
 
+          {/* Unlock Message */}
+          {hasNextLesson && !passed && (
+            <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-4 mb-6 text-center">
+              <div className="flex items-center justify-center gap-2 text-amber-800">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+                <p className="text-sm font-medium">
+                  Score 75% or higher to unlock the next lesson
+                </p>
+              </div>
+            </div>
+          )}
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* Continue to Next Lesson Button - Always show if there's a next lesson, but disabled if not passed */}
+            {hasNextLesson && (
+              passed ? (
+                <Link
+                  href={`/lessons/${nextLessonId}`}
+                  className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-2xl font-semibold text-sm uppercase tracking-wide transition-all shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2"
+                >
+                  Continue to Lesson {nextLessonId}
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </Link>
+              ) : (
+                <button
+                  disabled
+                  className="bg-slate-300 text-slate-500 px-8 py-3 rounded-2xl font-semibold text-sm uppercase tracking-wide cursor-not-allowed inline-flex items-center justify-center gap-2 opacity-60"
+                  title="Score 75% or higher to unlock"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                  Continue to Lesson {nextLessonId}
+                </button>
+              )
+            )}
+            
             <button
               onClick={handleRetry}
               className="bg-[#E07A7A] hover:bg-[#D06666] text-white px-8 py-3 rounded-2xl font-semibold text-sm uppercase tracking-wide transition-all shadow-lg hover:shadow-xl"
             >
               Try Again
             </button>
+            
             <Link
-              href="/quizzes"
+              href="/lessons"
               className="bg-white border-2 border-slate-200 text-slate-700 hover:bg-slate-50 px-8 py-3 rounded-2xl font-semibold text-sm uppercase tracking-wide transition-all inline-block"
             >
-              Back to Quizzes
+              Back to Lessons
             </Link>
           </div>
         </div>
