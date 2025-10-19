@@ -3,6 +3,18 @@
 import { getAllLessons } from '@/data/lessons';
 import Link from 'next/link';
 import { useEffect } from 'react';
+import { 
+  UserPlus, 
+  Package, 
+  MapPin, 
+  Clock, 
+  Calendar,
+  Users,
+  Heart,
+  BookOpen,
+  Star,
+  Zap
+} from 'lucide-react';
 
 export default function LessonsPage() {
   useEffect(() => {
@@ -17,6 +29,19 @@ export default function LessonsPage() {
     "from-purple-100 to-violet-100",
     "from-green-100 to-emerald-100",
     "from-red-100 to-pink-100",
+  ];
+
+  const lessonIcons = [
+    UserPlus,    // Lesson 1: Introductions, Pronouns, and Basic Grammar
+    Package,     // Lesson 2: Demonstratives, Everyday Objects, and Possession
+    MapPin,      // Lesson 3: Places & Locations
+    Clock,       // Lesson 4: Daily Activities, Time, and Basic Conversations
+    Calendar,    // Lesson 5: Going Places & Time Expressions
+    Users,       // Lesson 6: Placeholder
+    Heart,       // Lesson 7: Family, Giving and Receiving, Tools & Offers
+    BookOpen,    // Lesson 8: Adjectives & Descriptions
+    Star,        // Lesson 9: Existence (Imasu/Arimasu), Locations, and Positions
+    Zap          // Lesson 10: Placeholder
   ];
 
   return (
@@ -42,7 +67,10 @@ export default function LessonsPage() {
               <div className="flex items-center gap-3 md:gap-4">
                 {/* Icon - smaller */}
                 <div className={`w-12 h-12 md:w-16 md:h-16 flex-shrink-0 rounded-2xl bg-gradient-to-br ${lessonColors[idx % lessonColors.length]} flex items-center justify-center`}>
-                  <span className="text-xl md:text-2xl">✨</span>
+                  {(() => {
+                    const IconComponent = lessonIcons[lesson.id - 1] || Star;
+                    return <IconComponent className="w-6 h-6 md:w-8 md:h-8 text-slate-700" />;
+                  })()}
                 </div>
 
                 {/* Content - compact, stacks on mobile */}
