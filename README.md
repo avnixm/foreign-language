@@ -75,7 +75,7 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/4b-ebook.git
+   git clone https://github.com/avnixm/4b-ebook.git
    cd 4b-ebook
    ```
 
