@@ -8,7 +8,7 @@ export default function FloatingNav() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#E07A7A] text-white font-bold text-lg">◆</span>
+            <img src="/icon.png" alt="4B-EBook" className="h-9 w-9 rounded-lg" />
             <span className="text-xl font-bold text-[#E07A7A]">4B-EBOOK</span>
           </Link>
 
