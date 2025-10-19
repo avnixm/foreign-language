@@ -76,7 +76,7 @@
 1. **Clone the repository**
    ```bash
    git clone https://github.com/avnixm/foreign-language
-   cd 4b-ebook
+   cd foreign-language
    ```
 
 2. **Install dependencies**
@@ -105,7 +105,7 @@ npm start
 ## 📁 Project Structure
 
 ```
-4b-ebook/
+foreign-language/
 ├── public/                 # Static assets
 │   ├── icon.png           # App icon
 │   ├── 4bclasspic.jpeg    # Class photo for about page
