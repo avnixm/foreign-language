@@ -38,6 +38,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: '4B Class - Japanese Learning Community',
+        type: 'image/jpeg',
       },
     ],
   },
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '4B-EBook — Learn Japanese',
     description: 'Interactive Japanese lessons and quizzes. Master Hiragana, Katakana, and Kanji.',
-    images: ['/og-image.svg'],
+    images: ['/4bclasspic.jpeg'],
   },
   robots: {
     index: true,
