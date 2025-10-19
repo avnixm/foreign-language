@@ -1,8 +1,32 @@
 # 🇯🇵 4B-EBook — Learn Japanese
 
-A comprehensive, interactive Japanese learning application built with Next.js 15, featuring lessons, alphabet learning, quizzes, and cultural insights. Developed by the amazing students of 4B Class as part of their Foreign Language subject project at OLSHCO.
+<div align="center">
 
 ![4B-EBook Logo](public/icon.png)
+
+**A comprehensive, interactive Japanese learning application built with Next.js 15, featuring lessons, alphabet learning, quizzes, and cultural insights.**
+
+*Developed by the amazing students of 4B Class as part of their Foreign Language subject project at OLSHCO.*
+
+[![License](https://img.shields.io/badge/License-Educational-blue.svg)](https://github.com/4b-class/4b-ebook)
+[![Next.js](https://img.shields.io/badge/Next.js-15.5.5-black.svg)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.1.0-blue.svg)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.0-38B2AC.svg)](https://tailwindcss.com/)
+
+[Features](#-features) • [Installation](#-getting-started) • [Lessons](#-lesson-content) • [Alphabet](#-alphabet-learning) • [Development](#-development)
+
+---
+
+<div align="center">
+
+### 🖥️ Application Preview
+
+![4B-EBook Application](public/4bclasspic.jpeg)
+
+*Interactive Japanese learning interface with lessons, alphabet flashcards, and quizzes*
+
+</div>
 
 ## ✨ Features
 
@@ -270,43 +294,25 @@ We welcome contributions from the 4B Class community! Here's how you can help:
 
 This project is developed by 4B Class students for educational purposes. All content is created for learning Japanese language and culture.
 
+---
+
+<div align="center">
+
 ## 👥 Credits
 
 ### **Development Team**
-- **4B Class Students**: Core development and content creation
-- **Teachers & Mentors**: Guidance and support
-- **OLSHCO**: Educational institution support
+**4B Class Students** • **Teachers & Mentors** • **OLSHCO**
 
 ### **Special Thanks**
-- Japanese language teachers for content validation
-- Design mentors for UI/UX guidance
-- Technical advisors for development support
-
-## 📞 Support
-
-For questions, suggestions, or support:
-
-- **Email**: 4b-ebook@olshco.edu
-- **GitHub Issues**: [Report bugs or request features](https://github.com/your-username/4b-ebook/issues)
-- **Class Contact**: Reach out to 4B Class representatives
-
-## 🔮 Future Plans
-
-### **Phase 2 Features**
-- **Katakana Learning**: Complete alphabet system
-- **Kanji Introduction**: Basic kanji characters
-- **Advanced Lessons**: Intermediate and advanced content
-- **User Progress**: Save learning progress
-- **Offline Support**: Learn without internet
-
-### **Phase 3 Features**
-- **Speaking Practice**: Voice recognition
-- **Writing Practice**: Stroke order learning
-- **Cultural Immersion**: Virtual cultural experiences
-- **Community Features**: Study groups and forums
+Japanese language teachers • Design mentors • Technical advisors
 
 ---
 
 **Made with ❤️ by 4B Class for Japanese language learning**
 
 *"The fun way of learning Japanese is here!"*
+
+[![GitHub](https://img.shields.io/badge/GitHub-4B--EBook-black.svg)](https://github.com/4b-class/4b-ebook)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Available-green.svg)](https://fl.cieloes.com)
+
+</div>
